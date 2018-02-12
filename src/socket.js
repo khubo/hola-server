@@ -4,4 +4,8 @@ export default socket => {
   socket.emit('success', {
     message: 'sucessfully logged in'
   })
+
+  socket.on('message', (message) => {
+    console.log(`${socket.request.user}: ${message}`)
+  })
 }
