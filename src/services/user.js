@@ -24,8 +24,7 @@ export const createUser = (req, res) => {
       redis.set(username, Date.now())
       await geo.addLocationAsync('username', { latitude: position[0], longitude: position[1]})
       let token = createToken(username)
-      res.cookie('access-token', token, {maxAge: 9000000, httpOnly: true})
-        .send('ok!')
+      res.send({ token })
     } catch (e) {
       winston.info(`error: ${e}`)
       res.status(400).send('error creating user')
