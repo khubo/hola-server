@@ -1,4 +1,4 @@
 export default socket => {
 
-  console.log('a user connected')
+  console.log('user connected', socket.request.user)
 }
