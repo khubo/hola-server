@@ -19,6 +19,7 @@ const port = process.env.PORT || 1337
 app.use(bodyParser.json())
 app.use(cors({ origin: '*', credentials: true}))
 
+
 io.on('connection', handleSocket)
 io.use(socketAuth.authenticate({
     secret: config.jwt_secret,
