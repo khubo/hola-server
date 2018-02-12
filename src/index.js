@@ -23,7 +23,7 @@ io.on('connection', handleSocket)
 io.use(socketAuth.authenticate({
     secret: config.jwt_secret,
   }, (payload, done) => {
-  redis.getAsycn(username).then(data => {
+  redis.getAsync(payload.username).then(data => {
     if(data) return done(null, payload.username)
     return done(null, false, 'user doesnot exist')
   })

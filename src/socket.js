@@ -1,4 +1,7 @@
 export default socket => {
 
-  console.log('user connected', socket.request.user)
+  console.log(`${socket.request.user} connected`)
+  socket.emit('success', {
+    message: 'sucessfully logged in'
+  })
 }
