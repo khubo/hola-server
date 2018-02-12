@@ -22,17 +22,7 @@ export const createUser = (req, res) => {
         return res.status(400).send('username taken')
       }
       redis.set(username, Date.now())
-      console.log('psoition is', position)
       const reply = await geo.addLocationAsync(username, { latitude: position[0], longitude: position[1]})
-      console.log('rpely is', reply)
-      geo.location(username, (err, loc) => {
-        if(err) {
-          console.log('eror finding ', err)
-        }else {
-          console.log('location is ')
-          console.log(loc)
-        }
-      })
       let token = createToken(username)
       res.send({ token })
     } catch (e) {

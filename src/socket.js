@@ -21,7 +21,6 @@ export default socket => {
   socket.on('message', (message) => {
     (async () => {
       try {
-        let location = await geo.locationAsync(user)
         let nearby = await geo.nearbyAsync(user, 2000)
         nearby.map(id => {
           users[id].emit('new_message', {

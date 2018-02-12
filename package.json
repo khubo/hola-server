@@ -10,6 +10,7 @@
   "author": "khubo",
   "license": "MIT",
   "devDependencies": {
+    "@babel/node": "^7.0.0-beta.40",
     "@babel/register": "^7.0.0-beta.39",
     "ava": "^1.0.0-beta.1",
     "axios": "^0.17.1",
