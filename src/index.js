@@ -8,12 +8,13 @@ import socketAuth from 'socketio-jwt-auth'
 import handleSocket from './socket'
 import redis from './redis'
 import { createUser } from './services/user'
-import config from './config'
+import config from 'config'
 
 const app = express()
 const server = http.Server(app)
 const io = socketIo(server)
 const port = process.env.PORT || 1337
+const jwt_secret = config.get('jwt_secret')
 
 // register middlewares
 app.use(bodyParser.json())

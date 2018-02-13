@@ -1,0 +1,7 @@
+{
+  "redis": {
+    "host": "redis-15972.c15.us-east-1-2.ec2.cloud.redislabs.com",
+    "port": 15972,
+    "password": "verySecretPassword"
+  }
+}

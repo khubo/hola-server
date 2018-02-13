@@ -1,0 +1,8 @@
+{
+  "jwt_secret" : "n0T@b!gD3al13o!h@h@$$",
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "password":""
+  }
+}
