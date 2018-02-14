@@ -19,6 +19,7 @@
     "nodemon": "^1.14.12"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "bluebird": "^3.5.1",
     "body-parser": "^1.18.2",
     "config": "^1.29.4",
@@ -41,7 +42,8 @@
     "failFast": true,
     "failWithoutAssertion": false,
     "require": [
-      "@babel/register"
+      "@babel/register",
+      "babel-polyfill"
     ],
     "babel": {
       "testOptions": {
